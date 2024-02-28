@@ -8,3 +8,6 @@ Ingress  ------> Handler (receive logs from Ingtress sources) -------> Processor
 - TCP srever
 - GRPC server
 - API server
+
+
+Ingress <---Channel--->handler
