@@ -4,6 +4,7 @@ type Event interface {
 	display()
 }
 
+// Base struct
 type Log struct {
 	ID     int
 	Source string
@@ -15,8 +16,9 @@ type SystemLog struct {
 	Severity string
 }
 
-func (l Log) display() {
-	println(l.ID, l.Source, l.Body)
+// implement display method for SystemLog
+func (s SystemLog) display() {
+	println(s.ID, s.Source, s.Body)
 }
 
 func main() {
@@ -29,6 +31,13 @@ func main() {
 			Body:   "System is running",
 		},
 		Severity: "Info",
+	}
+
+	events = append(events, slog)
+
+	slog = SystemLog{
+		Log{2, "System", "System is running"},
+		"Error",
 	}
 
 	events = append(events, slog)
