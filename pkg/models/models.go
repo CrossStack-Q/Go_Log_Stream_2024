@@ -1,4 +1,4 @@
-package main
+package models
 
 type Event interface {
 	display()
